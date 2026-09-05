@@ -407,16 +407,17 @@
     display: block;
   }
 
-  .phone .night { opacity: 0; }
+  /* Day and night: lands on the night garden, then a slow turn to day and back */
+  .phone .night { opacity: 1; }
 
   .is-active .phone .night {
-    animation: nightfall 16s ease-in-out infinite;
+    animation: daybreak 16s ease-in-out infinite;
   }
 
-  @keyframes nightfall {
-    0%, 36% { opacity: 0; }
-    46%, 86% { opacity: 1; }
-    96%, 100% { opacity: 0; }
+  @keyframes daybreak {
+    0%, 40% { opacity: 1; }
+    50%, 84% { opacity: 0; }
+    94%, 100% { opacity: 1; }
   }
 
   .seal {
@@ -451,7 +452,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     .fig, .panel, .mark::before, .mark::after, .fig.stack video { transition: none; }
-    .is-active .phone .night { animation: none; }
+    .is-active .phone .night { animation: none; opacity: 1; }
   }
 
   /* ---------- Footer ---------- */
@@ -562,7 +563,7 @@
           <figure class="fig" data-fig="2">
             <div class="phone">
               <img src="bloom/home-day.jpg" width="720" height="1564" loading="lazy" decoding="async" alt="Bloom's home screen by day, with the sun and clouds">
-              <img class="night" src="bloom/home-night.jpg" width="720" height="1564" loading="lazy" decoding="async" alt="Bloom's home screen at night: the same sunflower under a crescent moon and stars">
+              <img class="night" src="bloom/home-night.jpg" width="720" height="1564" loading="eager" decoding="async" alt="Bloom's home screen at night: the same sunflower under a crescent moon and stars">
             </div>
           </figure>
           <figure class="fig stack" data-fig="3">
