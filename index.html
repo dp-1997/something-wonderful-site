@@ -439,11 +439,9 @@
     .peek-head { margin-bottom: 1.5rem; }
     .stage {
       order: 1;
-      position: sticky;
-      top: 0.75rem;
-      z-index: 2;
       width: 100%;
-      max-height: 62svh;
+      aspect-ratio: 1;
+      max-height: 58svh;
       margin-bottom: 1.5rem;
     }
     .peeks { order: 2; }
@@ -656,8 +654,32 @@
         });
       };
 
+      // On narrow screens the stage sits above the list: bring it back into
+      // view when an item is chosen so the change is seen
+      const narrow = matchMedia('(max-width: 760px)');
+      const reveal = (li, prevLi) => {
+        if (!narrow.matches) return;
+        const stageTop = stage.getBoundingClientRect().top;
+        if (stageTop >= 0) return;
+        let top = scrollY + stageTop - 12;
+        // Keep the opened text on screen too. Measure as if the previous item
+        // has already folded and this one has already unfolded.
+        let liTop = li.getBoundingClientRect().top + scrollY;
+        if (prevLi && prevLi.compareDocumentPosition(li) & Node.DOCUMENT_POSITION_FOLLOWING) {
+          liTop -= prevLi.querySelector('.panel').getBoundingClientRect().height;
+        }
+        const textBottom = liTop + li.querySelector('h3').offsetHeight + li.querySelector('p').offsetHeight + 24;
+        if (textBottom - top > innerHeight) top = textBottom - innerHeight;
+        scrollTo({ top, behavior: reduce.matches ? 'auto' : 'smooth' });
+      };
+
       buttons.forEach((b, i) => {
-        b.addEventListener('click', () => { if (i !== current) select(i); });
+        b.addEventListener('click', () => {
+          if (i === current) return;
+          const prevLi = buttons[current].closest('li');
+          select(i);
+          reveal(b.closest('li'), prevLi);
+        });
         b.addEventListener('keydown', (e) => {
           if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
           e.preventDefault();
