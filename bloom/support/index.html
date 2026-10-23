@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bloom support · Something Wonderful Studios</title>
+<meta name="description" content="Help with Bloom, the clay sunflower who reflects the shape of your day.">
+<style>
+:root {
+  --ink: #0b2f66;
+  --ink-soft: rgba(11, 47, 102, 0.78);
+  --ink-faint: rgba(11, 47, 102, 0.6);
+  --rule: rgba(11, 47, 102, 0.16);
+  --bg: #eef2f7;
+  --paper: #f3f2e5;
+  --pad: clamp(1.25rem, 4vw, 3rem);
+  --font: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--paper); color: var(--ink); font-family: var(--font); line-height: 1.6; }
+a { color: inherit; text-underline-offset: 0.18em; }
+main {
+  max-width: 38rem;
+  margin: 0 auto;
+  padding: max(var(--pad), env(safe-area-inset-top)) max(var(--pad), env(safe-area-inset-right))
+           max(var(--pad), env(safe-area-inset-bottom)) max(var(--pad), env(safe-area-inset-left));
+}
+.crumb { display: block; margin: 0.5rem 0 3rem; font-size: 0.9rem; color: var(--ink-faint); text-decoration: none; }
+.crumb:hover { color: var(--ink); }
+h1 { font-weight: 500; font-size: clamp(2rem, 6vw, 2.6rem); line-height: 1.15; letter-spacing: -0.01em; }
+.lede { margin: 1rem 0 2.5rem; font-size: 1.15rem; color: var(--ink-soft); }
+h2 { font-weight: 600; font-size: 1.05rem; margin: 2.25rem 0 0.5rem; }
+p, li { color: var(--ink-soft); }
+p + p { margin-top: 0.75rem; }
+ul { padding-left: 1.2rem; }
+li + li { margin-top: 0.35rem; }
+.rule { border: 0; border-top: 1px solid var(--rule); margin: 3rem 0 1.5rem; }
+footer { font-size: 0.85rem; color: var(--ink-faint); }
+@media (prefers-color-scheme: dark) {
+  :root { --ink: #e9eef8; --ink-soft: rgba(233, 238, 248, 0.82); --ink-faint: rgba(233, 238, 248, 0.6); --rule: rgba(233, 238, 248, 0.16); --paper: #0e1a2f; }
+}
+</style>
+</head>
+<body>
+<main>
+<a class="crumb" href="/">Something Wonderful Studios</a>
+<h1>Bloom support</h1>
+<p class="lede">Bloom is a clay sunflower who reflects the shape of your day. If something isn't right, or you'd like to say hello, write to <a href="mailto:hello@damianpickett.com">hello@damianpickett.com</a>. A person reads every message.</p>
+
+<h2>How does the plant get water?</h2>
+<p>From the shape of your day: steps, workouts, sleep, mindful minutes and time in daylight from Apple Health, plus time spent with him through Water. He never dies; a quiet day only makes him a little thirsty.</p>
+
+<h2>I said no to Health or Screen Time. Can I change my mind?</h2>
+<p>Yes. Open your iPhone's Settings, then Privacy &amp; Security. Health access is under Health, then Bloom. Screen Time access is under Screen Time. Bloom's own Settings, the cog on the garden, can take you there too.</p>
+
+<h2>How do I add the widget?</h2>
+<p>Touch and hold your Home Screen or Lock Screen, choose Edit, then Add Widget, and pick Bloom.</p>
+
+<h2>Where is my data?</h2>
+<p>Only on your iPhone. Bloom has no account and no server. You can export a copy of everything from Bloom's Settings. Read the <a href="../privacy/">privacy policy</a> for the details.</p>
+
+<h2>Does Bloom work on iPhone Duo?</h2>
+<p>Yes. Folded, the garden fits the outer screen; open, Planty and his words sit side by side like a picture book, in either orientation.</p>
+
+<hr class="rule">
+<footer>Bloom is made by Something Wonderful Studios.</footer>
+</main>
+</body>
+</html>

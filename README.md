@@ -6,6 +6,7 @@ Marketing site for Something Wonderful Studios, served at somethingwonderfulstud
 
 - Repo root — the deployable static site (`index.html` and the hero media)
 - `bloom/` — the Bloom first-look media: five H.264 films (760x1172, on paper) with JPEG posters, two home-screen captures and the app icon, all exported from `_build/Bloom/` in the workspace
+- `bloom/privacy/` and `bloom/support/` — Bloom's privacy policy and support page, linked from the app's Settings and the App Store listing (approved by Damian, 23 October 2026)
 - `assets/` — source imagery (excluded from deploys via `.vercelignore`)
 - `tools/` — wordmark generation (excluded from deploys). `wordmark.svg` and `bloom.svg` are Apple Garamond Light outlines produced with `wordmark.py`; the font itself is never served
 
